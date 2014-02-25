@@ -1,0 +1,11 @@
+<!-- new.html.erb -->
+<div class="users">
+<%= form_for [@user, @shared_playlist] do |f|%>
+
+  <%= f.hidden_field :user_id, params[:user_id] %>
+
+  <%= f.label :shared_user %>
+  <%= f.select :shared_user, options_from_collection_for_select(@users, :id, :first_name), {}, { multiple: true } %>
+
+  <%= f.submit "Share" %>
+<% end %></div>

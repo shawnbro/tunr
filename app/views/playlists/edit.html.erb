@@ -1,10 +1,12 @@
+<!-- edit.html.erb -->
+
 <div class="playlist">
   <h3><%= @playlist.title %></h3>
   <ul class="songs">
     <% @playlist.songs.each do |song| %>
       <li><%= render partial: 'songs/song', locals: { song: song } %></li>
     <% end %>
-    <li><%= link_to "Share Playlist", new_user_shared_playlist_path(@playlist.user_id) %></li>
   </ul>
-
 </div>
+
+<%= link_to "Share Playlist", new_user_shared_playlist_path() %>

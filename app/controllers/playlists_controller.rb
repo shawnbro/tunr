@@ -17,9 +17,14 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.find_by(id: params[:id])
   end
 
+  def edit
+    @playlist = Playlist.find_by(id: params[:id])
+  end
   private
 
   def load_user
     @user = User.find_by(id: params[:user_id])
   end
+
+
 end

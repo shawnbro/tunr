@@ -7,8 +7,13 @@ Tunr::Application.routes.draw do
 
   resources :users do
     resources :songs, only: [:index]
-    resources :playlists, only: [:new, :create, :show], shallow: true
+    resources :playlists, only: [:new, :create, :show, :edit], shallow: true
+    resources :shared_playlists, only: [:new, :create, :show], shallow: true
   end
+
+  
+
+
 
   #resources :sessions, only: [:new, :create, :destroy]
   get "/login", to: "session#new"
